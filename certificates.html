@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сертификаты</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="sertiki.css" />
+    <link rel="icon" type="image/x-icon" href="icon.ico" />
+  </head>
+  <body>
+    <nav>
+      <div class="menu">
+        <div class="logo">
+          <a href="index.html">JaNaLaser</a>
+        </div>
+        <div class="mobile-menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="index.html #top">Главная</a></li>
+          <li><a href="index.html #footer">Контакты</a></li>
+          <li><a href="index.html #reviews">Отзывы</a></li>
+          <li><a href="price.html">Прайс</a></li>
+          <li><a href="index.html #services">Рекомендации</a></li>
+          <li><a href="gallery.html">Фотогалерея</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="certificates-container reveal">
+      <h2>Наши сертификаты</h2>
+      <div class="certificate-frame reveal">
+        <img src="ser.jpeg" alt="Сертификат 1" class="zoomable" loading="lazy" decoding="async">
+      </div>
+      <div class="certificate-frame reveal">
+        <img src="ser2.jpeg" alt="Сертификат 2" class="zoomable" loading="lazy" decoding="async">
+      </div>
+      <div class="certificate-frame reveal">
+        <img src="ser3.jpeg" alt="Сертификат 3" class="zoomable" loading="lazy" decoding="async">
+      </div>
+      <div class="certificate-frame reveal">
+        <img src="ser4.jpeg" alt="Сертификат 4" class="zoomable" loading="lazy" decoding="async">
+      </div>
+    </div>
+    <div id="img-modal" class="img-modal">
+      <span class="img-modal-close">×</span>
+      <img class="img-modal-content" id="img-modal-img">
+    </div>
+    <!-- ===================== Подвал ===================== -->
+    <footer>
+      <div class="footer-container" id="footer">
+        <div class="footer-section">
+          <h3 class="footer-title">Контакты для записи</h3>
+          <div class="footer-contact-item">
+            <i>👤</i>
+            <a href="https://vk.com/id16663120" style="color: #fff; text-decoration: none;">ВКонтакте</a>
+          </div>
+          <div class="footer-contact-item">
+            <i>📱</i>
+            <a href="https://wa.me/message/GJ77IHEKRI5UL1" style="color: #fff; text-decoration: none;">WhatsApp</a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3 class="footer-title">QR-код для связи</h3>
+          <div class="qr-codes">
+            <div class="qr-code">
+              <img src="qr1.jpg" alt="QR-код для связи" loading="lazy" decoding="async">
+            </div>
+            <div class="qr-code">
+              <img src="qr2.jpg" alt="QR-код для связи 2" loading="lazy" decoding="async">
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Мобильное меню
+      document.addEventListener('DOMContentLoaded', function() {
+        const mobileToggle = document.querySelector('.mobile-menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        mobileToggle.addEventListener('click', function() {
+          navMenu.classList.toggle('active');
+          
+          // Анимация бургер-меню
+          const spans = mobileToggle.querySelectorAll('span');
+          spans.forEach(span => span.classList.toggle('active'));
+        });
+        
+        // Закрыть меню при клике на ссылку
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        navLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            const spans = mobileToggle.querySelectorAll('span');
+            spans.forEach(span => span.classList.remove('active'));
+          });
+        });
+      });
+      // Модальное окно для увеличения фото сертификата
+      document.addEventListener('DOMContentLoaded', function() {
+        const modal = document.getElementById('img-modal');
+        const modalImg = document.getElementById('img-modal-img');
+        const closeBtn = document.querySelector('.img-modal-close');
+        document.querySelectorAll('.zoomable').forEach(img => {
+          img.addEventListener('click', function() {
+            modal.style.display = 'flex';
+            modalImg.src = this.src;
+          });
+        });
+        closeBtn.addEventListener('click', function() {
+          modal.style.display = 'none';
+        });
+        modal.addEventListener('click', function(e) {
+          if (e.target === modal) modal.style.display = 'none';
+        });
+      });
+
+      // Анимация появления элементов при прокрутке
+      document.addEventListener('DOMContentLoaded', function() {
+        const reveals = document.querySelectorAll('.reveal:not(footer)');
+        if (!('IntersectionObserver' in window)) {
+          reveals.forEach(el => el.classList.add('reveal-visible'));
+          return;
+        }
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('reveal-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.05, rootMargin: '0px 0px -10% 0px' });
+
+        let delay = 0;
+        reveals.forEach(el => {
+          el.style.transitionDelay = (delay / 1000) + 's';
+          delay += 80;
+          observer.observe(el);
+        });
+      });
+    </script>
+  </body>
+</html>

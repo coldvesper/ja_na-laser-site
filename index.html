@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Студия эпиляции</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="image" href="img.jpg" fetchpriority="high">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="icon.ico" />
+  </head>
+  <body>
+    <!-- ===================== Навигация ===================== -->
+    <nav>
+      <div class="menu">
+        <div class="logo">
+          <a href="index.html">JaNaLaser</a>
+        </div>
+        <div class="mobile-menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="#top">Главная</a></li>
+          <li><a href="#footer">Контакты</a></li>
+          <li><a href="#reviews">Отзывы</a></li>
+          <li><a href="price.html">Прайс</a></li>
+          <li><a href="#services">Рекомендации</a></li>
+          <li><a href="gallery.html">Фотогалерея</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- ===================== Главный экран ===================== -->
+    <div class="img"></div>
+    <div class="center">
+      <div class="title">Лазерная эпиляция</div>
+      <div class="sub_title">Качканар</div>
+      <div class="btns">
+        <button onclick="location.href='#footer'">Записаться</button>
+      </div>
+    </div>
+
+    <!-- ===================== Технологии ===================== -->
+    <div class="photo-container reveal">
+      <h2 class="section-title">Наши технологии</h2>
+      <div class="photo-wrapper reveal">
+        <img src="Group 31.png" alt="Аппарат" class="service-photo" loading="lazy" decoding="async">
+        <div class="photo-overlay">
+          <a href="technologies.html"><button class="photo-btn">Подробнее</button></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== Отзывы ===================== -->
+    <div class="reviews-section reveal" id="reviews">
+      <h2 class="reviews-title">Отзывы наших клиентов</h2>
+      <div class="reviews-container">
+        <div class="reviews-scroll">
+          <div class="review-card">
+            <div class="review-content">
+              <h3 class="review-name">Анна</h3>
+              <p class="review-text">Отличный сервис! Очень довольна результатом.</p>
+            </div>
+          </div>
+          <div class="review-card">
+            <div class="review-content">
+              <h3 class="review-name">Мария</h3>
+              <p class="review-text">Профессиональный подход и внимание к деталям.</p>
+            </div>
+          </div>
+          <div class="review-card">
+            <div class="review-content">
+              <h3 class="review-name">Елена</h3>
+              <p class="review-text">Быстро, качественно, безболезненно!</p>
+            </div>
+          </div>
+          <div class="review-card">
+            <div class="review-content">
+              <h3 class="review-name">Ольга</h3>
+              <p class="review-text">Рекомендую всем! Отличный результат.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== Фотогалерея ===================== -->
+    <!-- ===================== Специалисты ===================== -->
+    <div class="staff-section reveal">
+      <h2 class="staff-title">Наши специалисты</h2>
+      <div class="staff-container">
+        <div class="staff-card">
+          <div class="staff-photo">
+            <img src="IMG_7058.jpg" alt="Специалист" class="staff-image" loading="lazy" decoding="async">
+          </div>
+          <div class="staff-info">
+            <h3 class="staff-name">Яна Владимировна</h3>
+            <p class="staff-position">Мастер эпиляции</p>
+            <p class="staff-description">Профессиональный мастер с опытом работы более 3 лет. Специализируется на лазерной эпиляции и уходе за кожей. Постоянно повышает квалификацию и следит за новыми технологиями в индустрии красоты.</p>
+            <div class="staff-contacts">
+              <a href="certificates.html" class="contact-link">
+                <p>📄Сертификаты</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== Рекомендации и советы ===================== -->
+    <div class="services-container reveal" id="services">
+      <div class="service-item">
+        <input type="checkbox" id="service1" class="service-checkbox">
+        <label for="service1" class="service-label">ПРОТИВОПОКАЗАНИЯ</label>
+        <div class="service-content">
+          <h2>ПРОТИВОПОКАЗАНИЯ</h2>
+          <P>• хронические дерматиты и атопический дерматит</P>
+          <P>• беременность и период лактации</P>
+          <P>• острые инфекционные заболевания</P>
+          <P>• онкологические заболевания</P>
+          <P>• сердечно-сосудистые заболевания</P>
+          <P>• гипертония</P>
+          <P>• заболевания крови</P>
+          <P>• туберкулез</P>
+          <P>• эпилепсия</P>
+          <P>• сахарный диабет</P>
+          <P>• крупные родинки в большом количестве</P>
+          <P>• герпес</P>
+          <P>• прием антибиотиков</P>
+          <P>• фотодерматоз</P>
+        </div>
+      </div>
+      <div class="service-item">
+        <input type="checkbox" id="service2" class="service-checkbox">
+        <label for="service2" class="service-label">СОВЕТЫ ПО УХОДУ ЗА СОБОЙ</label>
+        <div class="service-content">
+          <h2>СОВЕТЫ ПО УХОДУ ЗА СОБОЙ</h2>
+          <p>• Регулярное увлажнение кожи</p>
+          <p>• Использование солнцезащитных средств</p>
+          <p>• Правильное питание и питьевой режим</p>
+          <p>• Регулярные физические нагрузки</p>
+          <p>• Достаточный сон и отдых</p>
+        </div>
+      </div>
+      <div class="service-item">
+        <input type="checkbox" id="service3" class="service-checkbox">
+        <label for="service3" class="service-label">ПОДГОТОВКА К ПРОЦЕДУРЕ ЛАЗЕРНАЯ ЭПИЛЯЦИЯ</label>
+        <div class="service-content">
+          <h2>ПОДГОТОВКА К ПРОЦЕДУРЕ ЛАЗЕРНАЯ ЭПИЛЯЦИЯ</h2>
+          <P>• За нескольно недель до процедуры не прибегать к другим методам эпиляции (шугаринг,воск)</P>
+          <P>• За 14 дней до сеанса не загорать, не посещать солярий и не использовать нрема для загара</P>
+          <P>• За 12-14 дней до сеанса не принимать антибиотики (или пройти курс после лечения)</P>
+          <P>• Перед сеансом за сутки полностью сбрить волосы в зоне проведения лазерной эпиляции</P>
+          <P>• За сутки до процедуры не наносить дезодоранты и спиртосодержащие средства</P>
+          <P>• Не использовать скрабы, жирные крема и масла</P>
+        </div>
+      </div>
+      <div class="service-item">
+        <input type="checkbox" id="service4" class="service-checkbox">
+        <label for="service4" class="service-label">ПОДГОТОВКА К ПРОЦЕДУРЕ ЛАЗЕРНОЕ ОМОЛОЖЕНИЕ</label>
+        <div class="service-content">
+          <h2>ПОДГОТОВКА К ПРОЦЕДУРЕ ЛАЗЕРНОЕ ОМОЛОЖЕНИЕ</h2>
+          <p>• Избегать солнечных лучей за 2 недели</p>
+          <p>• Не использовать ретиноиды за неделю</p>
+          <p>• Очистить кожу от макияжа</p>
+          <p>• Не принимать алкоголь за 24 часа</p>
+          <p>• Прийти на процедуру с чистой кожей</p>
+        </div>
+      </div>
+      <div class="service-item">
+        <input type="checkbox" id="service5" class="service-checkbox">
+        <label for="service5" class="service-label">ПОСТПРОЦЕДУРНЫЙ УХОД ПОСЛЕ ЛЭ</label>
+        <div class="service-content">
+          <h2>ПОСТПРОЦЕДУРНЫЙ УХОД ПОСЛЕ ЛЭ</h2>
+          <p>• В первые 7 дней избегать бани, сауны, горячего душа и бассейна</p>
+          <p>• Не загорать и не посещать солярий 14 дней, ежедневно использовать SPF 50+ (зона лица)</p>
+          <p>• Не использовать скрабы, пилинги, ретиноиды и спиртосодержащие средства 7 дней</p>
+          <p>• Обработка пантенолом 2-3 раза в день в течении 3 дней</p>
+          <p>• Избегать интенсивных тренировок и тесной синтетической одежды 3-5 дней</p>
+          <p>• Избегать механических спсобов удаления волос, таких как эпиляция воском или пинцетом</p>
+          <p>• Не использовать средства, содержащие спирт</p>
+          <p>• Избегать массажа и интенсивного трения обработанных участков в течении 3-5 дней</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== Подвал ===================== -->
+    <footer>
+      <div class="footer-container" id="footer">
+        <div class="footer-section">
+          <h3 class="footer-title">Контакты для записи</h3>
+          <div class="footer-contact-item">
+            <i>👤</i>
+            <a href="https://vk.com/id16663120" style="color: #fff; text-decoration: none;">ВКонтакте</a>
+          </div>
+          <div class="footer-contact-item">
+            <i>📱</i>
+            <a href="https://wa.me/message/GJ77IHEKRI5UL1" style="color: #fff; text-decoration: none;">WhatsApp</a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3 class="footer-title">QR-код для связи</h3>
+          <div class="qr-codes">
+            <div class="qr-code">
+              <img src="qr1.jpg" alt="QR-код для связи" loading="lazy" decoding="async">
+            </div>
+            <div class="qr-code">
+              <img src="qr2.jpg" alt="QR-код для связи 2" loading="lazy" decoding="async">
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Мобильное меню
+      document.addEventListener('DOMContentLoaded', function() {
+        const mobileToggle = document.querySelector('.mobile-menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        mobileToggle.addEventListener('click', function() {
+          navMenu.classList.toggle('active');
+          
+          // Анимация бургер-меню
+          const spans = mobileToggle.querySelectorAll('span');
+          spans.forEach(span => span.classList.toggle('active'));
+        });
+        
+        // Закрыть меню при клике на ссылку
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        navLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            const spans = mobileToggle.querySelectorAll('span');
+            spans.forEach(span => span.classList.remove('active'));
+          });
+        });
+      });
+
+      // Анимация появления элементов при прокрутке
+      document.addEventListener('DOMContentLoaded', function() {
+        const reveals = document.querySelectorAll('.reveal:not(footer)');
+        if (!('IntersectionObserver' in window)) {
+          reveals.forEach(el => el.classList.add('reveal-visible'));
+          return;
+        }
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('reveal-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.05, rootMargin: '0px 0px -10% 0px' });
+
+        let delay = 0;
+        reveals.forEach(el => {
+          el.style.transitionDelay = (delay / 1000) + 's';
+          delay += 80;
+          observer.observe(el);
+        });
+      });
+    </script>
+  </body>
+</html>

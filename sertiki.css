@@ -1,0 +1,502 @@
+@import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400..800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Wix Madefor Display", sans-serif;
+}
+
+::selection {
+  color: #000;
+  background: #fff;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-size: 16px;
+  /* Вы можете добавить сюда фон или другие глобальные стили для body, если нужно */
+}
+
+nav {
+  position: fixed; 
+  background: #2F496E;
+  width: 100%;
+  padding: 15px 0;
+  z-index: 100;
+  top: 0; 
+  left: 0; 
+}
+
+nav .menu {
+  max-width: 1250px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.menu .logo a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 35px;
+  font-weight: 600;
+}
+
+.menu .nav-menu {
+  display: inline-flex;
+  list-style: none;
+  padding-left: 0; 
+}
+
+.menu .nav-menu li {
+  margin-left: 7px;
+}
+
+.menu .nav-menu li:first-child {
+  margin-left: 0px;
+}
+
+.menu .nav-menu li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 600;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.menu .nav-menu li a:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* ===================== Мобильное меню ===================== */
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.mobile-menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  margin: 3px 0;
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+.mobile-menu-toggle span.active:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.mobile-menu-toggle span.active:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-toggle span.active:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Стили для контейнера сертификатов */
+.certificates-container {
+  padding-top: 80px; /* Отступ сверху, чтобы не перекрывалось меню (подберите значение) */
+  max-width: 1200px; /* Максимальная ширина контейнера */
+  margin: 20px auto; /* Центрирование и отступы сверху/снизу */
+  padding: 20px;
+  text-align: center; /* Центрирование заголовка */
+}
+
+.certificates-container h2 {
+  margin-bottom: 30px; /* Отступ под заголовком */
+  font-size: 28px; /* Размер шрифта заголовка */
+  color: #333; /* Цвет заголовка */
+}
+
+/* Стили для отдельных рамок сертификатов */
+.certificate-frame {
+  display: inline-block; /* Отображение в строку */
+  border: 2px solid #ccc; /* Серая рамка */
+  padding: 15px; /* Внутренний отступ */
+  margin: 15px; /* Внешний отступ между рамками */
+  background-color: #f9f9f9; /* Светлый фон рамки */
+  border-radius: 8px; /* Скругленные углы */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Небольшая тень */
+  vertical-align: top; /* Выравнивание по верху, если высота разная */
+  max-width: 450px; /* Максимальная ширина рамки (подберите под свои изображения) */
+  text-align: center; /* Центрирование содержимого рамки */
+}
+
+.certificate-frame img {
+  max-width: 100%; /* Изображение не будет выходить за рамки */
+  height: auto; /* Сохранение пропорций изображения */
+  display: block; /* Убирает лишний отступ под изображением */
+  margin-bottom: 10px; /* Отступ под изображением */
+}
+
+.certificate-frame p {
+  font-size: 14px; /* Размер шрифта описания */
+  color: #555; /* Цвет текста описания */
+}
+
+/* Дополнительно: эффект при наведении */
+.certificate-frame:hover {
+  border-color: #2F496E; /* Изменение цвета рамки при наведении */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Усиление тени */
+}
+
+/* Модальное окно для увеличения сертификата */
+.modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+.modal:target {
+  display: flex;
+}
+.modal-content {
+  position: relative;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 90vw;
+  max-height: 90vh;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.modal-content img {
+  max-width: 80vw;
+  max-height: 80vh;
+  border-radius: 8px;
+}
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 2.5rem;
+  color: #2F496E;
+  text-decoration: none;
+  font-weight: bold;
+  z-index: 2;
+  transition: color 0.2s;
+}
+.close:hover {
+  color: #d00;
+}
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  background: transparent;
+}
+
+.img-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0; top: 0; width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.8);
+  align-items: center;
+  justify-content: center;
+}
+.img-modal-content {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 10px;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.3);
+  transition: transform 0.3s;
+  cursor: zoom-in;
+}
+.img-modal-close {
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  color: #fff;
+  font-size: 3rem;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 2;
+  transition: color 0.2s;
+}
+.img-modal-close:hover {
+  color: #d00;
+}
+
+/* ===================== Подвал ===================== */
+footer {
+  background: #2F496E;
+  color: #fff;
+  padding: 60px 20px;
+  margin-top: 60px;
+}
+.footer-container {
+  max-width: 1450px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+.footer-section {
+  padding: 20px;
+}
+.footer-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+.footer-contact-item {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.footer-contact-item i {
+  font-style: normal;
+  display: inline-block;
+  transform: none;
+}
+.footer-address {
+  line-height: 1.6;
+}
+.qr-code {
+  width: 200px;
+  height: 200px;
+  background: #fff;
+  padding: 10px;
+  border-radius: 10px;
+}
+.qr-code img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Два QR рядом */
+.qr-codes {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+/* ===================== Медиа-запросы ===================== */
+@media (max-width: 1200px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  nav {
+    padding: 10px 0;
+    position: fixed;
+  }
+  nav .menu {
+    flex-direction: row;
+    align-items: center;
+    padding: 0 15px;
+    position: relative;
+  }
+  .menu .logo a {
+    font-size: 24px;
+  }
+  .mobile-menu-toggle {
+    display: flex;
+  }
+  .menu .nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #2F496E;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+  .menu .nav-menu.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+  .menu .nav-menu li {
+    margin: 0;
+    width: 100%;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .menu .nav-menu li:last-child {
+    border-bottom: none;
+  }
+  .menu .nav-menu li a {
+    font-size: 16px;
+    padding: 15px 20px;
+    display: block;
+    width: 100%;
+    text-align: left;
+    line-height: 1.2;
+    transition: all 0.3s ease;
+  }
+  .menu .nav-menu li a:hover {
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+  }
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+  .staff-card {
+    flex-direction: column;
+  }
+  .staff-photo {
+    flex: 0 0 200px;
+  }
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+  .footer-section { padding: 10px 10px 0 10px; }
+  .footer-title { font-size: 18px; margin: 8px 0 12px; }
+  .footer-contact-item { justify-content: flex-start; gap: 8px; margin-bottom: 10px; }
+  .footer-contact-item i { color: #C18CFF; }
+  .qr-code { margin: 0; width: 110px; height: 110px; }
+  .services-container {
+    padding: 20px;
+  }
+  .service-label {
+    font-size: 20px;
+    padding: 15px;
+  }
+  .service-content {
+    padding: 20px;
+  }
+}
+
+/* ===================== Анимации появления ===================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px) scale(0.98);
+  transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+.reveal-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Базовые стили: desktop по умолчанию */
+.menu .nav-menu {
+  display: inline-flex;
+  flex-direction: row;
+  position: static;
+  background: none;
+  width: auto;
+  opacity: 1;
+  visibility: visible;
+  box-shadow: none;
+  transform: none;
+}
+.mobile-menu-toggle {
+  display: none;
+}
+.menu .nav-menu li {
+  list-style: none;
+  margin-left: 7px;
+  width: auto;
+  border-bottom: none;
+}
+.menu .nav-menu li:first-child {
+  margin-left: 0px;
+}
+.menu .nav-menu li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 600;
+  padding: 8px 15px;
+  border-radius: 5px;
+  display: inline-block;
+  width: auto;
+  text-align: center;
+  line-height: normal;
+  background: none;
+  transition: all 0.3s ease;
+}
+.menu .nav-menu li a:hover {
+  background: #fff;
+  color: #000;
+}
+
+@media (max-width: 1919px) {
+  .mobile-menu-toggle {
+    display: flex;
+  }
+  .menu .nav-menu {
+    display: flex;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #2F496E;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 200;
+  }
+  .menu .nav-menu.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+  .menu .nav-menu li {
+    margin: 0;
+    width: 100%;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .menu .nav-menu li:last-child {
+    border-bottom: none;
+  }
+  .menu .nav-menu li a {
+    display: block;
+    width: 100%;
+    text-align: left;
+    line-height: 1.2;
+    font-size: 16px;
+    padding: 15px 20px;
+    transition: all 0.3s ease;
+  }
+  .menu .nav-menu li a:hover {
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+  }
+}
