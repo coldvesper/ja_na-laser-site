@@ -1,10 +1,72 @@
 @import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400..800&display=swap');
 
+/* ===================== Предотвращение изменения цветов ===================== */
+/* Отключаем все возможные цветовые фильтры и инверсии */
+html {
+  filter: none !important;
+  -webkit-filter: none !important;
+  -moz-filter: none !important;
+  -ms-filter: none !important;
+  -o-filter: none !important;
+}
+
+body {
+  filter: none !important;
+  -webkit-filter: none !important;
+  -moz-filter: none !important;
+  -ms-filter: none !important;
+  -o-filter: none !important;
+}
+
+/* Принудительно устанавливаем цветовую схему */
+:root {
+  color-scheme: only light !important;
+  forced-color-adjust: none !important;
+}
+
+/* Отключаем системные настройки цвета */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: only light !important;
+  }
+}
+
+@media (prefers-contrast: high) {
+  * {
+    filter: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    filter: none !important;
+  }
+}
+
+/* Дополнительная защита для изображений */
+img, picture, svg {
+  filter: none !important;
+  -webkit-filter: none !important;
+  -moz-filter: none !important;
+  -ms-filter: none !important;
+  -o-filter: none !important;
+  forced-color-adjust: none !important;
+  color-scheme: only light !important;
+}
+
+/* Основные стили для всех элементов */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Wix Madefor Display", sans-serif;
+  filter: none !important;
+  -webkit-filter: none !important;
+  -moz-filter: none !important;
+  -ms-filter: none !important;
+  -o-filter: none !important;
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
 }
 
 ::selection {
