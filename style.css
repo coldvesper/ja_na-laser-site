@@ -1,11 +1,75 @@
 /* ===================== Импорт шрифтов и сброс ===================== */
 @import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400..800&display=swap');
+
+/* ===================== Предотвращение изменения цветов ===================== */
+/* Отключаем все возможные цветовые фильтры и инверсии */
+html {
+  filter: none !important;
+  -webkit-filter: none !important;
+  -moz-filter: none !important;
+  -ms-filter: none !important;
+  -o-filter: none !important;
+}
+
+body {
+  filter: none !important;
+  -webkit-filter: none !important;
+  -moz-filter: none !important;
+  -ms-filter: none !important;
+  -o-filter: none !important;
+}
+
+/* Принудительно устанавливаем цветовую схему */
+:root {
+  color-scheme: only light !important;
+  forced-color-adjust: none !important;
+}
+
+/* Отключаем системные настройки цвета */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: only light !important;
+  }
+}
+
+@media (prefers-contrast: high) {
+  * {
+    filter: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    filter: none !important;
+  }
+}
+
+/* Дополнительная защита для изображений */
+img, picture, svg {
+  filter: none !important;
+  -webkit-filter: none !important;
+  -moz-filter: none !important;
+  -ms-filter: none !important;
+  -o-filter: none !important;
+  forced-color-adjust: none !important;
+  color-scheme: only light !important;
+}
+
+/* Основные стили для всех элементов */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Wix Madefor Display", sans-serif;
+  filter: none !important;
+  -webkit-filter: none !important;
+  -moz-filter: none !important;
+  -ms-filter: none !important;
+  -o-filter: none !important;
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
 }
+
 ::selection {
   color: #000;
   background: #fff;
@@ -272,6 +336,7 @@ nav .menu {
 .reviews-section {
   padding: 60px 20px;
   background: #f5f5f5;
+  overflow: visible;
 }
 .reviews-title {
   text-align: center;
@@ -282,53 +347,212 @@ nav .menu {
 .reviews-container {
   max-width: 1450px;
   margin: 0 auto;
-  overflow: hidden;
+  overflow: visible;
+}
+
+/* ===================== Два ряда отзывов ===================== */
+.reviews-row {
+  margin-bottom: 30px;
+}
+
+.reviews-row:last-child {
+  margin-bottom: 0;
+}
+
+.top-row {
+  margin-bottom: 20px;
+}
+
+.bottom-row {
+  margin-top: 20px;
 }
 .reviews-scroll {
   display: flex;
   gap: 30px;
-  overflow-x: auto;
   padding: 20px 0;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  scrollbar-color: #2F496E #f1f1f1;
+}
+
+/* Скрываем скроллбары для автоматической прокрутки */
+.left-scroll,
+.right-scroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.left-scroll::-webkit-scrollbar,
+.right-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* Анимация для верхнего ряда (влево) */
+.left-scroll {
+  animation: scroll-left 60s linear infinite;
+  white-space: nowrap;
+}
+
+/* Анимация для нижнего ряда (вправо) */
+.right-scroll {
+  animation: scroll-right 60s linear infinite;
+  white-space: nowrap;
+}
+
+/* Ключевые кадры для прокрутки влево */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Ключевые кадры для прокрутки вправо */
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 .reviews-scroll::-webkit-scrollbar {
-  height: 8px;
+  height: 10px;
 }
 .reviews-scroll::-webkit-scrollbar-track {
   background: #f1f1f1;
-  border-radius: 4px;
+  border-radius: 5px;
 }
 .reviews-scroll::-webkit-scrollbar-thumb {
   background: #2F496E;
-  border-radius: 4px;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+.reviews-scroll::-webkit-scrollbar-thumb:hover {
+  background: #1a365d;
 }
 .review-card {
-  width: 400px;
+  width: 280px;
+  min-width: 280px;
   background: white;
   border-radius: 10px;
-  padding: 30px;
+  padding: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
+  scroll-snap-align: start;
+  overflow: visible;
+  cursor: pointer;
 }
 .review-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 .review-content {
   text-align: center;
 }
 .review-name {
   color: #2F496E;
-  font-size: 24px;
-  margin-bottom: 15px;
+  font-size: 18px;
+  margin-bottom: 10px;
   font-weight: 600;
 }
 .review-text {
   color: #333;
-  font-size: 18px;
-  line-height: 1.5;
+  font-size: 14px;
+  line-height: 1.4;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ===================== Модальное окно для отзывов ===================== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 5% auto;
+  padding: 30px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 600px;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  animation: slideIn 0.3s ease;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close:hover,
+.close:focus {
+  color: #2F496E;
+}
+
+#modalReviewName {
+  color: #2F496E;
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 600;
+}
+
+#modalReviewText {
+  color: #333;
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: left;
   margin: 0;
 }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
 .review-photo {
   width: 100%;
   height: 200px;
@@ -622,25 +846,66 @@ footer {
   }
   .reviews-section {
     padding: 30px 5px;
+    overflow: visible;
+  }
+  
+  .reviews-row {
+    margin-bottom: 20px;
+  }
+  
+  .top-row {
+    margin-bottom: 15px;
+  }
+  
+  .bottom-row {
+    margin-top: 15px;
   }
   .reviews-title {
     font-size: 22px;
   }
   .reviews-scroll {
-    gap: 10px;
+    gap: 15px;
     padding: 10px 0;
+    scroll-snap-type: x mandatory;
+    overflow: visible;
   }
   .review-card {
-    width: 90vw;
-    min-width: 220px;
-    padding: 15px;
+    width: 200px;
+    min-width: 200px;
+    padding: 10px;
+    scroll-snap-align: start;
   }
   .review-name {
-    font-size: 18px;
-  }
-  .review-text {
     font-size: 15px;
   }
+  .review-text {
+    font-size: 13px;
+  }
+
+  /* Адаптивные стили для модального окна */
+  .modal-content {
+    margin: 10% auto;
+    padding: 20px;
+    width: 95%;
+    max-width: none;
+  }
+
+  #modalReviewName {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  #modalReviewText {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .close {
+    font-size: 24px;
+    right: 15px;
+    top: 10px;
+  }
+
   .staff-section {
     padding: 30px 5px;
   }
@@ -698,8 +963,8 @@ footer {
     font-size: 15px;
   }
   .qr-code {
-    width: 120px;
-    height: 120px;
+    width: 110px;
+    height: 110px;
     margin: 0;
   }
   .services-container {
@@ -748,15 +1013,16 @@ footer {
     height: 40px;
   }
   .review-card {
-    width: 85vw;
-    min-width: 200px;
-    padding: 10px;
+    width: 70vw;
+    min-width: 160px;
+    padding: 6px;
+    overflow: visible;
   }
   .review-name {
-    font-size: 16px;
+    font-size: 14px;
   }
   .review-text {
-    font-size: 13px;
+    font-size: 11px;
   }
   .staff-name {
     font-size: 16px;
@@ -777,8 +1043,8 @@ footer {
     font-size: 13px;
   }
   .qr-code {
-    width: 100px;
-    height: 100px;
+    width: 110px;
+    height: 110px;
   }
   .service-label {
     font-size: 14px;
