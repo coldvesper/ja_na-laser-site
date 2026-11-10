@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="only light">
+    <meta name="forced-colors" content="none">
+    <meta name="prefers-color-scheme" content="light">
+    <title>Наши технологии</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="style1.css" />
+    <link rel="icon" type="image/x-icon" href="icon.ico" />
+  </head>
+  <body>
+    <nav>
+      <div class="menu">
+        <div class="logo">
+          <a href="index.html">Ja_Na_Laser</a>
+        </div>
+        <div class="mobile-menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="index.html #top">Главная</a></li>
+          <li><a href="index.html #footer">Контакты</a></li>
+          <li><a href="index.html #reviews">Отзывы</a></li>
+          <li><a href="price.html">Прайс</a></li>
+          <li><a href="index.html #services">Рекомендации</a></li>
+          <li><a href="gallery.html">Фотогалерея</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="image reveal">
+        <img src="Frame 3.png" alt="Наш лазерный аппарат" loading="lazy" decoding="async">
+    </div>
+    
+    <div class="TEXT reveal">
+        <h1>Характеристики аппарата</h1>
+    </div>
+    
+    <section class="tabl reveal">
+        <div class="column reveal">
+            <ul>
+                <li>Пиковый выход энергии 225 Дж за 250 мс</li>
+                <li>Окно манипулы 12 х 18 мм</li>
+                <li>Неограниченное количество вспышек</li>
+                <li>Длина волны: 808 nm</li>
+            </ul>
+        </div>
+        <div class="column reveal">
+            <ul>
+                <li>Фирменный диодный стек: 14 бар</li>
+                <li>Охлаждение системы: Пельтье, водяное, фреоновое, воздушное, пассивное</li>
+                <li>Охлаждение носика манипулы до -20°С</li>
+            </ul>
+        </div>
+        <div class="column reveal">
+            <ul>
+                <li>Экосистема «PRO BEAUTY»</li>
+                <li>Облачное хранение данных</li>
+                <li>Потребляемая мощность: до 1 500 Вт</li>
+                <li>Габариты и вес: 110х50х50 см, 48 кг</li>
+                <li>Сертифицировано в Германии: TÜV CN22J7MC</li>
+            </ul>
+        </div>
+    </section>
+    <div class="video reveal">
+      <iframe src="https://kinescope.io/embed/uHg45C37ZyTcDKtW8P8aW8" allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write;" frameborder="0" allowfullscreen="" width="100%" height="500"></iframe>
+    </div>
+    <footer>
+      <div class="footer-container" id="footer">
+        <div class="footer-section">
+          <h3 class="footer-title">Контакты для записи</h3>
+          <div class="footer-contact-item">
+            <i>👤</i>
+            <a href="https://vk.com/id16663120" style="color: #fff; text-decoration: none;">ВКонтакте</a>
+          </div>
+          <div class="footer-contact-item">
+            <i>📱</i>
+            <a href="https://wa.me/message/GJ77IHEKRI5UL1" style="color: #fff; text-decoration: none;">WhatsApp</a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3 class="footer-title">QR-код для связи</h3>
+          <div class="qr-codes">
+            <div class="qr-code">
+              <img src="qr1.jpg" alt="QR-код для связи" class="qr-img" loading="lazy" decoding="async">
+            </div>
+            <div class="qr-code">
+              <img src="qr2.jpg" alt="QR-код для связи 2" class="qr-img" loading="lazy" decoding="async">
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Мобильное меню
+      document.addEventListener('DOMContentLoaded', function() {
+        const mobileToggle = document.querySelector('.mobile-menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        mobileToggle.addEventListener('click', function() {
+          navMenu.classList.toggle('active');
+          
+          // Анимация бургер-меню
+          const spans = mobileToggle.querySelectorAll('span');
+          spans.forEach(span => span.classList.toggle('active'));
+        });
+        
+        // Закрыть меню при клике на ссылку
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        navLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            const spans = mobileToggle.querySelectorAll('span');
+            spans.forEach(span => span.classList.remove('active'));
+          });
+        });
+      });
+      // Анимация появления элементов при прокрутке
+      document.addEventListener('DOMContentLoaded', function() {
+        const reveals = document.querySelectorAll('.reveal:not(footer)');
+        if (!('IntersectionObserver' in window)) {
+          reveals.forEach(el => el.classList.add('reveal-visible'));
+          return;
+        }
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('reveal-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.05, rootMargin: '0px 0px -10% 0px' });
+
+        let delay = 0;
+        reveals.forEach(el => {
+          el.style.transitionDelay = (delay / 1000) + 's';
+          delay += 80;
+          observer.observe(el);
+        });
+      });
+    </script>
+  </body>
+</html>

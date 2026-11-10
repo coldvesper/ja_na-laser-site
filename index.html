@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="only light">
+    <meta name="forced-colors" content="none">
+    <meta name="prefers-color-scheme" content="light">
+    <title>Студия эпиляции</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="image" href="img.jpg" fetchpriority="high">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="icon.ico" />
+  </head>
+  <body>
+    <!-- ===================== Навигация ===================== -->
+    <nav>
+      <div class="menu">
+        <div class="logo">
+          <a href="index.html">Ja_Na_Laser</a>
+        </div>
+        <div class="mobile-menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="#top">Главная</a></li>
+          <li><a href="#footer">Контакты</a></li>
+          <li><a href="#reviews">Отзывы</a></li>
+          <li><a href="price.html">Прайс</a></li>
+          <li><a href="#services">Рекомендации</a></li>
+          <li><a href="gallery.html">Фотогалерея</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- ===================== Главный экран ===================== -->
+    <div class="img"></div>
+    <div class="center">
+      <div class="title">Лазерная эпиляция</div>
+      <div class="sub_title">Качканар</div>
+      <div class="btns">
+        <button onclick="location.href='#footer'">Записаться</button>
+      </div>
+    </div>
+
+    <!-- ===================== Технологии ===================== -->
+    <div class="photo-container reveal">
+      <h2 class="section-title">Наши технологии</h2>
+      <div class="photo-wrapper reveal">
+        <img src="Group 31.png" alt="Аппарат" class="service-photo" loading="lazy" decoding="async">
+        <div class="photo-overlay">
+          <a href="technologies.html"><button class="photo-btn">Подробнее</button></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== Отзывы ===================== -->
+    <div class="reviews-section reveal" id="reviews">
+      <h2 class="reviews-title">Отзывы наших клиентов</h2>
+      <div class="reviews-container">
+        <!-- Верхний ряд - прокрутка влево -->
+        <div class="reviews-row top-row">
+          <div class="reviews-scroll left-scroll">
+            <div class="review-card" onclick="openReviewModal('Ольга Д.', 'В мае была на последней процедуре. Я безумно рада, что курс оказался таким эффективным🙏 Яна - ты мастер своего дела,безмерно благодарна тебе !!! И вообще сама как человек ,ты солнышко ясное 😘😘😘ОБОЖАЮ❤❤❤')">
+              <div class="review-content">
+                <h3 class="review-name">Ольга Д.</h3>
+                <p class="review-text">В мае была на последней процедуре. Я безумно рада, что курс оказался таким эффективным🙏 Яна - ты мастер своего дела,безмерно благодарна тебе !!! И вообще сама как человек ,ты солнышко ясное 😘😘😘ОБОЖАЮ❤❤❤</p>
+              </div>
+            </div>
+            <div class="review-card" onclick="openReviewModal('Наталья Б.', 'Ой да вообще кайф) мастер своего дела,индивидуальный подход ,вечный позитив и теплая атмосфера. Вышли уже в 4 месяца . Никаких раздражений и дискомфорта. В общем девочки рекомендую. Люблю🙏🙏🙏🙏💜💜')">
+              <div class="review-content">
+                <h3 class="review-name">Наталья Б.</h3>
+                <p class="review-text">Ой да вообще кайф) мастер своего дела,индивидуальный подход ,вечный позитив и теплая атмосфера. Вышли уже в 4 месяца . Никаких раздражений и дискомфорта. В общем девочки рекомендую. Люблю🙏🙏🙏🙏💜💜</p>
+              </div>
+            </div>
+            <div class="review-card" onclick="openReviewModal('Анастасия Г.', 'Яночка , это тот человек который всегда найдет время даже для тех 🤣🤷‍♀ типа меня которые добирается очень долго 🤦‍♀ Лучше мастера я не знаю ❤⭐⭐⭐⭐⭐⭐')">
+              <div class="review-content">
+                <h3 class="review-name">Анастасия Г.</h3>
+                <p class="review-text">Яночка , это тот человек который всегда найдет время даже для тех 🤣🤷‍♀ типа меня которые добирается очень долго 🤦‍♀ Лучше мастера я не знаю ❤⭐⭐⭐⭐⭐⭐</p>
+              </div>
+            </div>
+            <div class="review-card" onclick="openReviewModal('Нина М.', 'Янчик, спасибо большое за чудесное настроение и за гладкость кожи! Ты мастер своего дела, ни на кого тебя не променяю❤')">
+              <div class="review-content">
+                <h3 class="review-name">Нина М.</h3>
+                <p class="review-text">Янчик, спасибо большое за чудесное настроение и за гладкость кожи! Ты мастер своего дела, ни на кого тебя не променяю❤</p>
+              </div>
+            </div>
+            <div class="review-card" onclick="openReviewModal('Алёна П.', 'Это любовь 😻 с первого раза 😂🫶🏼 Всегда все чики Брики, волосики выкинь ✌🏻 Жду когда приду опять 🔥')">
+              <div class="review-content">
+                <h3 class="review-name">Алёна П.</h3>
+                <p class="review-text">Это любовь 😻 с первого раза 😂🫶🏼 Всегда все чики Брики, волосики выкинь ✌🏻 Жду когда приду опять 🔥</p>
+              </div>
+            </div>
+            <div class="review-card" onclick="openReviewModal('Екатерина З.', 'Наша фея лысятости 🤭.....')">
+              <div class="review-content">
+                <h3 class="review-name">Екатерина З.</h3>
+                <p class="review-text">Наша фея лысятости 🤭.....</p>
+              </div>
+            </div>
+            <!-- Дублируем отзывы для бесконечной прокрутки -->
+            <div class="review-card" onclick="openReviewModal('Анна Ш.', 'Яночка , ты однозначно крута в своем деле 💪🏻😎🫶🏻 Как человек и как мастер просто мега 🤩результат есть - Значит работает , другого не дано🫶')">
+              <div class="review-content">
+                <h3 class="review-name">Анна Ш.</h3>
+                <p class="review-text">Яночка , ты однозначно крута в своем деле 💪🏻😎🫶🏻 Как человек и как мастер просто мега 🤩результат есть - Значит работает , другого не дано🫶</p>
+              </div>
+            </div>
+            <div class="review-card" onclick="openReviewModal('Татьяна Д.', 'Мне близка твоя энергетика и потрясающее чувство юмора, результат от процедур великолепен! Спасибо Яна.')">
+              <div class="review-content">
+                <h3 class="review-name">Татьяна Д.</h3>
+                <p class="review-text">Мне близка твоя энергетика и потрясающее чувство юмора, результат от процедур великолепен! Спасибо Яна.</p>
+              </div>
+            </div>
+            <div class="review-card" onclick="openReviewModal('Альбина М.', 'Яна, от всей души спасибо за гладкую кожу♥ Самый позитивный мастер, отлично делающий свою работу😁🫶')">
+              <div class="review-content">
+                <h3 class="review-name">Альбина М.</h3>
+                <p class="review-text">Яна, от всей души спасибо за гладкую кожу♥ Самый позитивный мастер, отлично делающий свою работу😁🫶</p>
+              </div>
+            </div>
+            <div class="review-card" onclick="openReviewModal('Екатерина М.', '✨ Полный восторг от процедуры! Яна — настоящий профессионал своего дела, чуткая и внимательная💕 Процедура за самыми лучшими разговорами проходит очень быстро, комфортно и совершенно безболезненно 👍🏻 Результат превзошел ожидания, а главное — эффект сохраняется надолго! 🤞🏻 Огромное спасибо Яночке за профессионализм, заботу и внимание к деталям💗 Всем рекомендую попробовать это!!!✨')">
+              <div class="review-content">
+                <h3 class="review-name">Екатерина М.</h3>
+                <p class="review-text">✨ Полный восторг от процедуры!
+                  Яна — настоящий профессионал своего дела, чуткая и внимательная💕
+                  Процедура за самыми лучшими разговорами проходит очень быстро, комфортно и совершенно безболезненно 👍🏻
+                  
+                  Результат превзошел ожидания, а главное — эффект сохраняется надолго! 🤞🏻
+                  
+                  Огромное спасибо Яночке за профессионализм, заботу и внимание к деталям💗
+                  Всем рекомендую попробовать это!!!✨</p>
+              </div>
+            </div>
+            <div class="review-card" onclick="openReviewModal('Екатерина В.', 'Яна ты супер-мега-мощь и сила 😎💪🏽🫶 вышли на крутой результат, жалею только о том, что не обратилась к тебе раньше 😇 любовь навсегда ♥♥♥')">
+              <div class="review-content">
+                <h3 class="review-name">Екатерина В.</h3>
+                <p class="review-text">Яна ты супер-мега-мощь и сила 😎💪🏽🫶 вышли на крутой результат, жалею только о том, что не обратилась к тебе раньше 😇 любовь навсегда ♥♥♥</p>
+              </div>
+            </div>
+            <div class="review-card" onclick="openReviewModal('Ксения К.', 'Я в полном шоке от эффекта, была на процедуре последний раз почти год назад, и до сих пор все гладко,хочу сходить просто потому что уже соскучилась😂 Яна настоящий профессионал своего дела,более комфортного мастера я ещё не видела. На каждую процедуру прихожу как домой, знаю что время за разговорами пройдёт незаметно Безболезненно,интересно, уютно,а самое главное эффективно. Однозначно, лазер у Яны, это самое лучшее моё жизненное решение☝❤❤❤')">
+              <div class="review-content">
+                <h3 class="review-name">Ксения К.</h3>
+                <p class="review-text">Я в полном шоке от эффекта, была на процедуре последний раз почти год назад, и до сих пор все гладко,хочу сходить просто потому что уже соскучилась😂
+                  Яна настоящий профессионал своего дела,более комфортного мастера я ещё не видела. На каждую процедуру прихожу как домой, знаю что время за разговорами пройдёт незаметно
+                  Безболезненно,интересно, уютно,а самое главное эффективно. Однозначно, лазер у Яны, это самое лучшее моё жизненное решение☝❤❤❤</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Нижний ряд - прокрутка вправо -->
+        <div class="reviews-row bottom-row">
+          <div class="reviews-scroll right-scroll">
+            <div class="review-card" onclick="openReviewModal('Инна У.', 'Отдельный респект от представителей блондинок 😀 Результатом довольна!')">
+              <div class="review-content">
+                <h3 class="review-name">Инна У.</h3>
+                <p class="review-text">Отдельный респект от представителей блондинок 😀 Результатом довольна!</p>
+              </div>
+            </div>
+            <div class="review-card" onclick="openReviewModal('Анастасия М.', 'Яночка ты профессионал своего дела!❤ Внимательная и отзывчивая! Наша первая встреча прошла очень легко, а дальше только лучше) Ты очень подробно разъяснила о всех противопоказаниях и дальнейшем уходе. Во время процедуры интересовалась моими ощущениями. С тобой комфортно и душевно!☺ Всегда все честно расскажешь и для тебя главное результат своей работы🙏🏻 Цена-качество🔥 Особенно для светленьких 😄С удовольствием рекомендую тебя всем!❤')">
+              <div class="review-content">
+                <h3 class="review-name">Анастасия М.</h3>
+                <p class="review-text">Яночка ты профессионал своего дела!❤ Внимательная и отзывчивая!
+                  Наша первая встреча прошла очень легко, а дальше только лучше) Ты очень подробно разъяснила о всех противопоказаниях и дальнейшем уходе. Во время процедуры интересовалась моими ощущениями. С тобой комфортно и душевно!☺ Всегда все честно расскажешь и для тебя главное результат своей работы🙏🏻 Цена-качество🔥 Особенно для светленьких 😄
+                  С удовольствием рекомендую тебя всем!❤</p>
+              </div>
+            </div>
+            <div class="review-card" onclick="openReviewModal('Юлия М.', 'Самый лучший мастер своего дела 🥰😍😍😍 когда пришла к тебе сразу видно профессионал 🍀🔥 с удовольствием хожу, все на высшем уровне 🫶')">
+              <div class="review-content">
+                <h3 class="review-name">Юлия М.</h3>
+                <p class="review-text">Самый лучший мастер своего дела 🥰😍😍😍 когда пришла к тебе сразу видно профессионал 🍀🔥 с удовольствием хожу, все на высшем уровне 🫶</p>
+              </div>
+            </div>
+            <div class="review-card" onclick="openReviewModal('Алла Х.', 'Хочу выразить благодарность мастеру лазерной эпиляции, Яне, за профессиональную работу! Процедура прошла безболезненно и эффективно. Результат превзошёл мои ожидания — волосы стали заметно реже и менее заметными. Мастер подробно объяснил все нюансы процедуры и ответил на все мои вопросы. Обязательно буду рекомендовать этого специалиста своим подругам! Спасибо!👍❤🌹')">
+              <div class="review-content">
+                <h3 class="review-name">Алла Х.</h3>
+                <p class="review-text">Хочу выразить благодарность мастеру лазерной эпиляции, Яне, за профессиональную работу! Процедура прошла безболезненно и эффективно. Результат превзошёл мои ожидания — волосы стали заметно реже и менее заметными. Мастер подробно объяснил все нюансы процедуры и ответил на все мои вопросы. Обязательно буду рекомендовать этого специалиста своим подругам! Спасибо!👍❤🌹</p>
+              </div>
+            </div>
+            <div class="review-card" onclick="openReviewModal('Юлия С.', 'Яночка, ты выведешь на диалог даже таких молчаливых как я! Для меня это очень важно, когда мастер к себе располагает! Очень комфортно с тобой работать! Ты уже конечно знаешь, что я к тебе пришла по рекомендациям подруг, и ни разу не пожалела! Желаю только всего самого лучшего!')">
+              <div class="review-content">
+                <h3 class="review-name">Юлия С.</h3>
+                <p class="review-text">Яночка, ты выведешь на диалог даже таких молчаливых как я! Для меня это очень важно, когда мастер к себе располагает! Очень комфортно с тобой работать! Ты уже конечно знаешь, что я к тебе пришла по рекомендациям подруг, и ни разу не пожалела! Желаю только всего самого лучшего!</p>
+              </div>
+            </div>
+            <div class="review-card" onclick="openReviewModal('Евгения А.', 'Я таааак долго решалась на все это (были личные моменты по коже), но все мои подруги уже в голос мне орали - «Иди к Яне»! И я пришла… Заботы с бритьем окончены, проблемы с кожей на стадии завершения! Это ли не счастье для любой девочки ❤‍🔥 Довольна, как слон! Яна - человек, которому можно с легкостью довериться. Все покажет, подскажет, на все вопросы ответит 😌 Большая благодарность за твой труд 🫂')">
+              <div class="review-content">
+                <h3 class="review-name">Евгения А.</h3>
+                <p class="review-text">Я таааак долго решалась на все это (были личные моменты по коже), но все мои подруги уже в голос мне орали - «Иди к Яне»! И я пришла… Заботы с бритьем окончены, проблемы с кожей на стадии завершения! Это ли не счастье для любой девочки ❤‍🔥 Довольна, как слон! Яна - человек, которому можно с легкостью довериться. Все покажет, подскажет, на все вопросы ответит 😌 Большая благодарность за твой труд 🫂</p>
+              </div>
+            </div>
+            <!-- Дублируем отзывы для бесконечной прокрутки -->
+            <div class="review-card" onclick="openReviewModal('Анна З.', 'Яна, ты просто волшебница лазерной эпиляции! ✨ Я всегда с нетерпением жду наших встреч, потому что знаю, что ты не только сделаешь мою кожу идеально гладкой, но и зарядишь позитивом на весь день! 💖 Твоя энергетика просто невероятная, и каждая процедура проходит в такой комфортной и дружелюбной атмосфере, что я чувствую себя как дома. 😊 Результат твоей работы всегда превосходит мои ожидания, и я с уверенностью рекомендую тебя всем своим подругам! Ты - настоящий профессионал своего дела, и я очень рада, что нашла такого замечательного мастера, как ты! 💋💋💋')">
+              <div class="review-content">
+                <h3 class="review-name">Анна З.</h3>
+                <p class="review-text">Яна, ты просто волшебница лазерной эпиляции! ✨ Я всегда с нетерпением жду наших встреч, потому что знаю, что ты не только сделаешь мою кожу идеально гладкой, но и зарядишь позитивом на весь день! 💖 Твоя энергетика просто невероятная, и каждая процедура проходит в такой комфортной и дружелюбной атмосфере, что я чувствую себя как дома. 😊 Результат твоей работы всегда превосходит мои ожидания, и я с уверенностью рекомендую тебя всем своим подругам! Ты - настоящий профессионал своего дела, и я очень рада, что нашла такого замечательного мастера, как ты! 💋💋💋</p>
+              </div>
+            </div>
+            <div class="review-card" onclick="openReviewModal('Анна С.', 'Кратко- лучшая! 😘')">
+              <div class="review-content">
+                <h3 class="review-name">Анна С.</h3>
+                <p class="review-text">Кратко- лучшая! 😘</p>
+              </div>
+            </div>
+            <div class="review-card" onclick="openReviewModal('Юлия М.', 'Самый лучший мастер своего дела 🥰😍😍😍 когда пришла к тебе сразу видно профессионал 🍀🔥 с удовольствием хожу, все на высшем уровне 🫶')">
+              <div class="review-content">
+                <h3 class="review-name">Юлия М.</h3>
+                <p class="review-text">Самый лучший мастер своего дела 🥰😍😍😍 когда пришла к тебе сразу видно профессионал 🍀🔥 с удовольствием хожу, все на высшем уровне 🫶</p>
+              </div>
+            </div>
+            <div class="review-card" onclick="openReviewModal('Алла Х.', 'Хочу выразить благодарность мастеру лазерной эпиляции, Яне, за профессиональную работу! Процедура прошла безболезненно и эффективно. Результат превзошёл мои ожидания — волосы стали заметно реже и менее заметными. Мастер подробно объяснил все нюансы процедуры и ответил на все мои вопросы. Обязательно буду рекомендовать этого специалиста своим подругам! Спасибо!👍❤🌹')">
+              <div class="review-content">
+                <h3 class="review-name">Алла Х.</h3>
+                <p class="review-text">Хочу выразить благодарность мастеру лазерной эпиляции, Яне, за профессиональную работу! Процедура прошла безболезненно и эффективно. Результат превзошёл мои ожидания — волосы стали заметно реже и менее заметными. Мастер подробно объяснил все нюансы процедуры и ответил на все мои вопросы. Обязательно буду рекомендовать этого специалиста своим подругам! Спасибо!👍❤🌹</p>
+              </div>
+            </div>
+            <div class="review-card" onclick="openReviewModal('Юлия С.', 'Яночка, ты выведешь на диалог даже таких молчаливых как я! Для меня это очень важно, когда мастер к себе располагает! Очень комфортно с тобой работать! Ты уже конечно знаешь, что я к тебе пришла по рекомендациям подруг, и ни разу не пожалела! Желаю только всего самого лучшего!')">
+              <div class="review-content">
+                <h3 class="review-name">Юлия С.</h3>
+                <p class="review-text">Яночка, ты выведешь на диалог даже таких молчаливых как я! Для меня это очень важно, когда мастер к себе располагает! Очень комфортно с тобой работать! Ты уже конечно знаешь, что я к тебе пришла по рекомендациям подруг, и ни разу не пожалела! Желаю только всего самого лучшего!</p>
+              </div>
+            </div>
+            <div class="review-card" onclick="openReviewModal('Евгения А.', 'Я таааак долго решалась на все это (были личные моменты по коже), но все мои подруги уже в голос мне орали - «Иди к Яне»! И я пришла… Заботы с бритьем окончены, проблемы с кожей на стадии завершения! Это ли не счастье для любой девочки ❤‍🔥 Довольна, как слон! Яна - человек, которому можно с легкостью довериться. Все покажет, подскажет, на все вопросы ответит 😌 Большая благодарность за твой труд 🫂')">
+              <div class="review-content">
+                <h3 class="review-name">Евгения А.</h3>
+                <p class="review-text">Я таааак долго решалась на все это (были личные моменты по коже), но все мои подруги уже в голос мне орали - «Иди к Яне»! И я пришла… Заботы с бритьем окончены, проблемы с кожей на стадии завершения! Это ли не счастье для любой девочки ❤‍🔥 Довольна, как слон! Яна - человек, которому можно с легкостью довериться. Все покажет, подскажет, на все вопросы ответит 😌 Большая благодарность за твой труд 🫂</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Модальное окно для отзывов -->
+    <div id="reviewModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 id="modalReviewName"></h2>
+        <p id="modalReviewText"></p>
+      </div>
+    </div>
+
+    <!-- ===================== Фотогалерея ===================== -->
+    <!-- ===================== Специалисты ===================== -->
+    <div class="staff-section reveal">
+      <h2 class="staff-title">Наши специалисты</h2>
+      <div class="staff-container">
+        <div class="staff-card">
+          <div class="staff-photo">
+            <img src="IMG_7058.jpg" alt="Специалист" class="staff-image" loading="lazy" decoding="async">
+          </div>
+          <div class="staff-info">
+            <h3 class="staff-name">Яна Владимировна</h3>
+            <p class="staff-position">Мастер эпиляции</p>
+            <p class="staff-description">Профессиональный мастер с опытом работы более 3 лет. Специализируется на лазерной эпиляции и уходе за кожей. Постоянно повышает квалификацию и следит за новыми технологиями в индустрии красоты.</p>
+            <div class="staff-contacts">
+              <a href="certificates.html" class="contact-link">
+                <p>📄Сертификаты</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== Рекомендации и советы ===================== -->
+    <div class="services-container reveal" id="services">
+      <div class="service-item">
+        <input type="checkbox" id="service1" class="service-checkbox">
+        <label for="service1" class="service-label">ПРОТИВОПОКАЗАНИЯ</label>
+        <div class="service-content">
+          <h2>ПРОТИВОПОКАЗАНИЯ</h2>
+          <P>• хронические дерматиты и атопический дерматит</P>
+          <P>• беременность и период лактации</P>
+          <P>• острые инфекционные заболевания</P>
+          <P>• онкологические заболевания</P>
+          <P>• сердечно-сосудистые заболевания</P>
+          <P>• гипертония</P>
+          <P>• заболевания крови</P>
+          <P>• туберкулез</P>
+          <P>• эпилепсия</P>
+          <P>• сахарный диабет</P>
+          <P>• крупные родинки в большом количестве</P>
+          <P>• герпес</P>
+          <P>• прием антибиотиков</P>
+          <P>• фотодерматоз</P>
+        </div>
+      </div>
+      <div class="service-item">
+        <input type="checkbox" id="service2" class="service-checkbox">
+        <label for="service2" class="service-label">СОВЕТЫ ПО УХОДУ ЗА СОБОЙ</label>
+        <div class="service-content">
+          <h2>СОВЕТЫ ПО УХОДУ ЗА СОБОЙ</h2>
+          <p>• Регулярное увлажнение кожи</p>
+          <p>• Использование солнцезащитных средств</p>
+          <p>• Правильное питание и питьевой режим</p>
+          <p>• Регулярные физические нагрузки</p>
+          <p>• Достаточный сон и отдых</p>
+        </div>
+      </div>
+      <div class="service-item">
+        <input type="checkbox" id="service3" class="service-checkbox">
+        <label for="service3" class="service-label">ПОДГОТОВКА К ПРОЦЕДУРЕ ЛАЗЕРНАЯ ЭПИЛЯЦИЯ</label>
+        <div class="service-content">
+          <h2>ПОДГОТОВКА К ПРОЦЕДУРЕ ЛАЗЕРНАЯ ЭПИЛЯЦИЯ</h2>
+          <P>• За нескольно недель до процедуры не прибегать к другим методам эпиляции (шугаринг,воск)</P>
+          <P>• За 14 дней до сеанса не загорать, не посещать солярий и не использовать нрема для загара</P>
+          <P>• За 12-14 дней до сеанса не принимать антибиотики (или пройти курс после лечения)</P>
+          <P>• Перед сеансом за сутки полностью сбрить волосы в зоне проведения лазерной эпиляции</P>
+          <P>• За сутки до процедуры не наносить дезодоранты и спиртосодержащие средства</P>
+          <P>• Не использовать скрабы, жирные крема и масла</P>
+        </div>
+      </div>
+      <div class="service-item">
+        <input type="checkbox" id="service4" class="service-checkbox">
+        <label for="service4" class="service-label">ПОДГОТОВКА К ПРОЦЕДУРЕ ЛАЗЕРНОЕ ОМОЛОЖЕНИЕ</label>
+        <div class="service-content">
+          <h2>ПОДГОТОВКА К ПРОЦЕДУРЕ ЛАЗЕРНОЕ ОМОЛОЖЕНИЕ</h2>
+          <p>• Избегать солнечных лучей за 2 недели</p>
+          <p>• Не использовать ретиноиды за неделю</p>
+          <p>• Очистить кожу от макияжа</p>
+          <p>• Не принимать алкоголь за 24 часа</p>
+          <p>• Прийти на процедуру с чистой кожей</p>
+        </div>
+      </div>
+      <div class="service-item">
+        <input type="checkbox" id="service5" class="service-checkbox">
+        <label for="service5" class="service-label">ПОСТПРОЦЕДУРНЫЙ УХОД ПОСЛЕ ЛЭ</label>
+        <div class="service-content">
+          <h2>ПОСТПРОЦЕДУРНЫЙ УХОД ПОСЛЕ ЛЭ</h2>
+          <p>• В первые 7 дней избегать бани, сауны, горячего душа и бассейна</p>
+          <p>• Не загорать и не посещать солярий 14 дней, ежедневно использовать SPF 50+ (зона лица)</p>
+          <p>• Не использовать скрабы, пилинги, ретиноиды и спиртосодержащие средства 7 дней</p>
+          <p>• Обработка пантенолом 2-3 раза в день в течении 3 дней</p>
+          <p>• Рекомендуемые средства: <a href="https://www.wildberries.ru/catalog/264715540/detail.aspx" target="_blank">264715540</a>, <a href="https://www.wildberries.ru/catalog/347713548/detail.aspx" target="_blank">347713548</a>, <a href="https://www.wildberries.ru/catalog/312712069/detail.aspx" target="_blank">312712069</a>, <a href="https://www.wildberries.ru/catalog/15742670/detail.aspx" target="_blank">15742670</a></p>
+          <p>• Избегать интенсивных тренировок и тесной синтетической одежды 3-5 дней</p>
+          <p>• Избегать механических спсобов удаления волос, таких как эпиляция воском или пинцетом</p>
+          <p>• Не использовать средства, содержащие спирт</p>
+          <p>• Избегать массажа и интенсивного трения обработанных участков в течении 3-5 дней</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== Подвал ===================== -->
+    <footer>
+      <div class="footer-container" id="footer">
+        <div class="footer-section">
+          <h3 class="footer-title">Контакты для записи</h3>
+          <div class="footer-contact-item">
+            <i>👤</i>
+            <a href="https://vk.com/id16663120" style="color: #fff; text-decoration: none;">ВКонтакте</a>
+          </div>
+          <div class="footer-contact-item">
+            <i>📱</i>
+            <a href="https://wa.me/message/GJ77IHEKRI5UL1" style="color: #fff; text-decoration: none;">WhatsApp</a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3 class="footer-title">QR-код для связи</h3>
+          <div class="qr-codes">
+            <div class="qr-code">
+              <img src="qr1.jpg" alt="QR-код для связи" loading="lazy" decoding="async">
+            </div>
+            <div class="qr-code">
+              <img src="qr2.jpg" alt="QR-код для связи 2" loading="lazy" decoding="async">
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Мобильное меню
+      document.addEventListener('DOMContentLoaded', function() {
+        const mobileToggle = document.querySelector('.mobile-menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        mobileToggle.addEventListener('click', function() {
+          navMenu.classList.toggle('active');
+          
+          // Анимация бургер-меню
+          const spans = mobileToggle.querySelectorAll('span');
+          spans.forEach(span => span.classList.toggle('active'));
+        });
+        
+        // Закрыть меню при клике на ссылку
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        navLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            const spans = mobileToggle.querySelectorAll('span');
+            spans.forEach(span => span.classList.remove('active'));
+          });
+        });
+      });
+
+      // Анимация появления элементов при прокрутке
+      document.addEventListener('DOMContentLoaded', function() {
+        const reveals = document.querySelectorAll('.reveal:not(footer)');
+        if (!('IntersectionObserver' in window)) {
+          reveals.forEach(el => el.classList.add('reveal-visible'));
+          return;
+        }
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('reveal-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.05, rootMargin: '0px 0px -10% 0px' });
+
+        let delay = 0;
+        reveals.forEach(el => {
+          el.style.transitionDelay = (delay / 1000) + 's';
+          delay += 80;
+          observer.observe(el);
+        });
+      });
+
+      // Автоматическая прокрутка отзывов
+      document.addEventListener('DOMContentLoaded', function() {
+        const leftScroll = document.querySelector('.left-scroll');
+        const rightScroll = document.querySelector('.right-scroll');
+        
+        if (leftScroll && rightScroll) {
+          // Пауза анимации при наведении мыши
+          leftScroll.addEventListener('mouseenter', function() {
+            this.style.animationPlayState = 'paused';
+          });
+          
+          leftScroll.addEventListener('mouseleave', function() {
+            this.style.animationPlayState = 'running';
+          });
+          
+          rightScroll.addEventListener('mouseenter', function() {
+            this.style.animationPlayState = 'paused';
+          });
+          
+          rightScroll.addEventListener('mouseleave', function() {
+            this.style.animationPlayState = 'running';
+          });
+          
+          // Пауза анимации при касании на мобильных
+          leftScroll.addEventListener('touchstart', function() {
+            this.style.animationPlayState = 'paused';
+          });
+          
+          leftScroll.addEventListener('touchend', function() {
+            this.style.animationPlayState = 'running';
+          });
+          
+          rightScroll.addEventListener('touchstart', function() {
+            this.style.animationPlayState = 'paused';
+          });
+          
+          rightScroll.addEventListener('touchend', function() {
+            this.style.animationPlayState = 'running';
+          });
+        }
+      });
+
+      // Модальное окно для отзывов
+      const reviewModal = document.getElementById('reviewModal');
+      const modalReviewName = document.getElementById('modalReviewName');
+      const modalReviewText = document.getElementById('modalReviewText');
+      const closeBtn = document.querySelector('.close');
+
+      function openReviewModal(name, text) {
+        modalReviewName.textContent = name;
+        modalReviewText.textContent = text;
+        reviewModal.style.display = 'block';
+      }
+
+      closeBtn.addEventListener('click', function() {
+        reviewModal.style.display = 'none';
+      });
+
+      window.addEventListener('click', function(event) {
+        if (event.target == reviewModal) {
+          reviewModal.style.display = 'none';
+        }
+      });
+
+
+    </script>
+  </body>
+</html>
